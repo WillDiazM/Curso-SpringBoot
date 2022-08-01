@@ -10,4 +10,46 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "comunas")
 public class Comuna {
+
+    private long idComuna;
+    private String descripcion;
+    private long idRegion;
+
+
+    public Comuna(long idComuna, String descripcion, long idRegion) {
+        this.idComuna = idComuna;
+        this.descripcion = descripcion;
+        this.idRegion = idRegion;
+
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public long getIdComuna() {
+        return idComuna;
+    }
+
+    public void setIdComuna(long idComuna) {
+        this.idComuna = idComuna;
+    }
+
+    @Column(name = "descripcion", nullable = false)
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    @Column(name = "idRegion", nullable = false)
+    public long getIdRegion() {
+        return idRegion;
+    }
+
+    public void setIdRegion(long idRegion) {
+        this.idRegion = idRegion;
+    }
+
+
 }
